@@ -8,9 +8,9 @@ import { ErrorComponent } from './components/error/error.component';
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
 
-  {path:'home', component:HomeComponent},
-  {path:'contact', component:ContactComponent},
-  {path:'projects', component:ProjectsComponent},
+  {path:'home', component:HomeComponent, data:{depth:'home'}},
+  {path:'contact', component:ContactComponent, data:{depth:'contact'}},
+  {path:'projects', component:ProjectsComponent, data:{depth:'projects'}},
 
   {path:'**', component:ErrorComponent}
 ];

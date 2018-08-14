@@ -1,9 +1,12 @@
 import { Component, OnInit,  } from '@angular/core';
+import { routerTransition } from './module/animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations:[routerTransition]
+
 })
 
 export class AppComponent implements OnInit {
@@ -20,7 +23,6 @@ export class AppComponent implements OnInit {
   co = 9;
 
   ngOnInit(){
-  
     window.addEventListener('resize', ()=>{
       var t:any = document.querySelector("#de")
 
@@ -34,5 +36,7 @@ export class AppComponent implements OnInit {
 
     })
   }
-  
+  getDepth(outlet){
+    return  outlet.activatedRouteData.depth || null;
+  }
 }
