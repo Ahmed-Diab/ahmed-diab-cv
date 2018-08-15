@@ -1,0 +1,50 @@
+@import '../../../assets/scss/color';
+.contact{
+    mat-grid-tile{
+        background-color: $color_a;
+        
+        box-shadow: 0 0 12px 0px #666766;
+        border-radius: 5px;
+        a{
+            margin-right: 10px;
+            background-color: $color_b;
+        }
+        a:last-of-type{
+            margin-right: 0px;
+        }
+        div{
+            text-align: center;
+            color: $color_b !important;
+            p{
+                color: $color_b !important;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+
+    }
+
+      form{
+          width: 80%;
+        .example-form {
+            width: 100%;
+          }
+          
+          .example-full-width {
+            width: 100%;
+          }
+          textarea, input{
+              color: $color_b !important;
+              width: 100%;
+              resize: none;
+              &::placeholder{
+                color: $color_b !important;
+            }
+          }
+      }
+      .btn{
+          background-color: $color_b;
+          color:$color_a;
+          margin-top: 20px;
+      }
+}

@@ -1,0 +1,14 @@
+<mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'20px'">
+  <mat-grid-tile *ngFor="let image  of images">
+        <img src="/small-{{image}}"  alt="shoes shop images">
+        <div (click)='seeOverlay(image)' class="imageOverlay">
+          <h6> page</h6>
+        </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="overlay">
+    <span class="fa fa-close fa-2x" (click)='hideOverlay()'></span>
+  <div class="overlay-chiled">
+      <img src="" id="overlayImage" alt="shoes shop">
+  </div>
+</div>

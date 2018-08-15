@@ -15,22 +15,17 @@
 <mat-drawer-container class="example-container" autosize>
 
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <mat-grid-list id="de" cols="1" r rowHeight="1:.2">
-      <mat-grid-tile class="mat-grid-tile">   
-        <a mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a>
-      </mat-grid-tile>
-      <mat-grid-tile  class="mat-grid-tile">   
-          <a mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
-        </mat-grid-tile>
-        <mat-grid-tile class="mat-grid-tile">   
-            <a mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
-          </mat-grid-tile>
-    </mat-grid-list>
+    <div class="side">
+        <a mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
+        <a mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
+        <a mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
+    </div>
+
   </mat-drawer>
 
   <div class="example-sidenav-content">
     <button type="button" mat-mini-fab class="mat-mini-fab" (click)="drawer.toggle()">
-      <img src="../assets/images/home.png" alt="home icon">
+      <i class="fa fa-2x fa-home"></i>
     </button>
 <div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
     <router-outlet #myOutlet='outlet'></router-outlet>

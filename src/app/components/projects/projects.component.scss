@@ -1,0 +1,25 @@
+@import '../../../assets/scss/color.scss';
+.projects{
+    .app{
+        width: 300px;
+        position: absolute;
+        transition: all ease .5s;
+        overflow: hidden;
+
+        a{
+            text-decoration: none;
+            &:hover{
+
+                img{
+                    transform: rotateZ(20deg) scale(1.5);
+                }
+            }
+            img{
+                transition: all ease .3s;
+                width: 100%;
+            }
+    
+        }
+    }
+
+}

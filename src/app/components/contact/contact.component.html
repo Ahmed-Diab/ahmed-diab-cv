@@ -1,3 +1,54 @@
-<p>
-  contact works!
-</p>
+<div class="contact">
+  <h4>contact</h4>
+  <mat-grid-list cols="{{col}}" rowHeight="300px"  [gutterSize]="'10px'">
+    <mat-grid-tile >
+      <div>
+          <p>ahmedeiddiab@gmil.com</p>
+              <a href="https://www.facebook.com/ahmed.dibo.7140" target="_blank" mat-mini-fab class="mat-mini-fab">
+                <i class="fa fa-facebook  fa-2x"></i>
+            </a>
+            <a  href="https://twitter.com/ahmed85703369" target="_blank" mat-mini-fab class="mat-mini-fab" >
+                  <i class="fa  fa-twitter fa-2x"></i>
+            </a>
+            <a  href="https://www.linkedin.com/in/ahmed-diab-aa2473144/" target="_blank" mat-mini-fab class="mat-mini-fab" >
+              <i class="fa  fa-linkedin fa-2x"></i>
+        </a>
+      </div>
+
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <form class="example-form" (submit)="sendMessage()">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [formControl]="emailFormControl"
+                 [errorStateMatcher]="matcher" name="email" [(ngModel)]="email">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input  matInput placeholder="Name" name='name' [(ngModel)]="name"
+          [errorStateMatcher]="matcher" [formControl]="nameFormControl">
+                  
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <textarea  matInput placeholder="Message" name="message" [(ngModel)]="message"
+          [errorStateMatcher]="matcher" [formControl]="messageFormControl"></textarea>
+          <mat-error *ngIf="messageFormControl.hasError('required')">
+            message is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn" type="submit">send</button>
+      </form>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
