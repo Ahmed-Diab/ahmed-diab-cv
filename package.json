@@ -2,13 +2,13 @@
   "name": "ahmed-cv",
   "version": "0.0.0",
   "scripts": {
+    "start": "node server.js",
     "ng": "ng",
     "startng": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "start":"npm start"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
