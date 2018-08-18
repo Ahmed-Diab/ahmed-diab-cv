@@ -18,13 +18,6 @@ export class ProjectsComponent implements OnInit {
       alt:'shoes shop app home page image',
       logoImage:'../../../assets/images/shoes-shop-logo.png',
       logoAlt:'../../../assets/images/shoes-shop-logo.png'
-    },
-    {
-      link:'/shoes-shop', 
-      image:'../../../assets/images/small-home.png', 
-      alt:'shoes shop app home page image',
-      logoImage:'../../../assets/images/shoes-shop-logo.png',
-      logoAlt:'../../../assets/images/shoes-shop-logo.png'
     }
   ]
   constructor(
