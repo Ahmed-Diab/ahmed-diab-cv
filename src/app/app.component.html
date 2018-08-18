@@ -1,37 +1,19 @@
-<!-- <div class="button-row">
-  <button mat-button>Basic</button>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button color="warn">Warn</button>
-  <button mat-button disabled>Disabled</button>
-  <a mat-button routerLink=".">Link</a>
-</div>
-<mat-grid-list id="de" cols="{{co}}" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list> -->
-<mat-drawer-container class="example-container" autosize>
 
+<mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="side">
         <a mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
         <a mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
         <a mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
     </div>
-
   </mat-drawer>
-
   <div class="example-sidenav-content">
     <button type="button" mat-mini-fab class="mat-mini-fab" (click)="drawer.toggle()">
       <i class="fa fa-2x fa-home"></i>
     </button>
-<div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
-    <router-outlet #myOutlet='outlet'></router-outlet>
-</div>
-
+    <div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
+        <router-outlet #myOutlet='outlet'></router-outlet>
+    </div>
   </div>
-
 </mat-drawer-container>
 

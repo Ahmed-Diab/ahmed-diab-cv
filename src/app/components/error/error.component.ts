@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-error',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _title:Title,
+    private _meta:Meta
+  ) { }
 
   ngOnInit() {
+    this._title.setTitle('Ahmed | Error')
+    this._meta.addTag({name:"description", content:'hello i am ahmed i am amean stake dev'})
   }
 
 }

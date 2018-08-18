@@ -19,23 +19,20 @@ export class AppComponent implements OnInit {
       this.co = 9
     }
    }
-  title = 'app';
-  co = 9;
+    title = 'app';
+    co = 9;
 
   ngOnInit(){
     window.addEventListener('resize', ()=>{
-      var t:any = document.querySelector("#de")
-
       if (window.innerWidth > 578) {
         this.co = 4
       }
       if (window.innerWidth > 478 && window.innerWidth < 578) {
         this.co = 2
       }
-      
-
     })
   }
+
   getDepth(outlet){
     return  outlet.activatedRouteData.depth || null;
   }

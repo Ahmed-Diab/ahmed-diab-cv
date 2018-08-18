@@ -1,4 +1,4 @@
-<mat-grid-list cols="4" rowHeight="2:1" [gutterSize]="'20px'">
+<mat-grid-list cols="{{col}}" rowHeight="{{row}}" [gutterSize]="'20px'">
   <mat-grid-tile *ngFor="let image  of images">
         <img src="/small-{{image}}"  alt="shoes shop images">
         <div (click)='seeOverlay(image)' class="imageOverlay">

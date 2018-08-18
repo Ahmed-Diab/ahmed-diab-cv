@@ -1,8 +1,12 @@
 <h4>projects</h4>
-<div class="projects">
-    <div class="app">
-        <a href="http://localhost:3000/shoes-shop" target="_blank">
-            <img src="../../../assets/images/small-home.png" alt="shoes shop app home page image">
-       </a>
-    </div>
-</div>
+<mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
+        <mat-grid-tile *ngFor="let project of projects">
+            <a href="{{project.link}}" target="_blank">
+                <img src="{{project.image}}" alt="{{project.alt}}">
+                <div class="overlay">
+                    <img src="{{project.logoImage}}" alt="{{project.logoImage}}">
+                </div>
+            </a>
+        </mat-grid-tile>
+</mat-grid-list>
+

@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, routingComponants } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatInputModule, MatSnackBarModule} from '@angular/material';
 
 import { ErrorComponent } from './components/error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './components/layout/spinner/spinner.component';
 import { ShoesShopComponent } from './components/projects/shoes-shop/shoes-shop.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { ShoesShopComponent } from './components/projects/shoes-shop/shoes-shop.
     MatGridListModule,
     MatSidenavModule,
     MatInputModule,
+    MatSnackBarModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   exports: [
@@ -38,7 +41,8 @@ import { ShoesShopComponent } from './components/projects/shoes-shop/shoes-shop.
     MatInputModule,
     MatCheckboxModule, 
     MatGridListModule, 
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule
   ],
 
   providers: [],
