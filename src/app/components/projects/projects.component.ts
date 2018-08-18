@@ -13,14 +13,14 @@ export class ProjectsComponent implements OnInit {
 
   projects = [
     {
-      link:'http://localhost:3000/shoes-shop', 
+      link:'/shoes-shop', 
       image:'../../../assets/images/small-home.png', 
       alt:'shoes shop app home page image',
       logoImage:'../../../assets/images/shoes-shop-logo.png',
       logoAlt:'../../../assets/images/shoes-shop-logo.png'
     },
     {
-      link:'http://localhost:3000/shoes-shop', 
+      link:'/shoes-shop', 
       image:'../../../assets/images/small-home.png', 
       alt:'shoes shop app home page image',
       logoImage:'../../../assets/images/shoes-shop-logo.png',
