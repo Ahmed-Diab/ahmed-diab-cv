@@ -31,7 +31,9 @@ app.use('/message', message)
 
 // Index Route
 app.get('/', (req, res) => {
-  res.send('invaild endpoint');
+  // res.send('invaild endpoint');
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+
 });
 
 app.get('*', (req, res) => {
