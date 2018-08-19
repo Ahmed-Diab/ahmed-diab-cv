@@ -2,17 +2,19 @@
 <mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
         <mat-grid-tile *ngFor="let image of images">
             <span >
-                <img src="{{image.image}}" alt="{{image.alt}}">
-                <div (click)='seeOverlay(image.image)' class="overlay">
+                <img src="{{image.image}}" alt="{{image.alt}}" (load)='imgLoding()'>
+                <div (click)='seeOverlay(image)' class="overlay">
                     <h6>{{image.dis}}</h6>
                 </div>
+                <image-spinner *ngIf="loading"></image-spinner>
               </span>
         </mat-grid-tile>
 </mat-grid-list>
 
 <div class="overlayWindow">
-    <span class="fa fa-close fa-2x" (click)='hideOverlay()'></span>
+    <span class="fa fa-close fa-2x" (click)='hideOverlay()' ></span>
   <div class="overlay-chiled">
-      <img src="" id="overlayImage" alt="shoes shop">
+      <img src="" id="overlayImage" alt="shoes shop" (load)='imgLoding2()'>
+      <image-spinner *ngIf="loading2"></image-spinner>
   </div>
 </div>

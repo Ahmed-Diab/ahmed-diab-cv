@@ -8,13 +8,12 @@ import { ShoesShopComponent } from './components/projects/shoes-shop/shoes-shop.
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
-
   {path:'home', component:HomeComponent, data:{depth:'home'}},
   {path:'contact', component:ContactComponent, data:{depth:'contact'}},
   {path:'projects', component:ProjectsComponent, data:{depth:'projects'}},
   {path:'shoes-shop', component:ShoesShopComponent},
 
-
+  
   {path:'**', component:ErrorComponent}
 ];
 
@@ -28,5 +27,6 @@ export const routingComponants = [
   ContactComponent,
   ErrorComponent,
   ProjectsComponent,
-  ShoesShopComponent
+  ShoesShopComponent,
+
 ]

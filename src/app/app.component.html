@@ -1,5 +1,6 @@
 
 <mat-drawer-container class="example-container" autosize>
+    <app-spinner *ngIf="spinner"></app-spinner>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="side">
         <a mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
@@ -12,6 +13,7 @@
       <i class="fa fa-2x fa-home"></i>
     </button>
     <div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
+
         <router-outlet #myOutlet='outlet'></router-outlet>
     </div>
   </div>

@@ -9,6 +9,9 @@ export class ShoesShopComponent implements OnInit {
 
   col = 4;
   row = '1:1'
+  loading: boolean = true;
+  loading2: boolean = true;
+
   constructor() { }
 
   images = [ 
@@ -50,15 +53,33 @@ export class ShoesShopComponent implements OnInit {
     })
   }
   seeOverlay(i){
+    let image = i.image
+    let alt = i.alt
     var overlay = document.querySelector('.overlayWindow')
     var overlayImage = document.querySelector('#overlayImage')
-    overlayImage.setAttribute('src', `/${i}`)
+    overlayImage.setAttribute('src', `/${image}`)
+    overlayImage.setAttribute('alt', `${alt}`)
     overlay.classList.add('enterOveraly');
 
   }
   hideOverlay(){
     var overlay = document.querySelector('.overlayWindow')
-    overlay.classList.remove('enterOveraly')
+    overlay.classList.remove('enterOveraly');
+    this.loading2 = true;
   }
 
+
+  imgLoding(){
+    setTimeout(()=>{
+      this.loading = false;
+
+    }, 100)
+  }
+
+  imgLoding2(){
+    setTimeout(()=>{
+      this.loading2 = false;
+
+    }, 100)
+  }
 }

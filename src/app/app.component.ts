@@ -8,28 +8,21 @@ import { routerTransition } from './module/animation';
   animations:[routerTransition]
 
 })
-
 export class AppComponent implements OnInit {
   showFiller = false;
+  spinner:boolean = true
   constructor() {
-    if (window.innerWidth > 578) {
-      this.co = 4
-    }
-    if (window.innerWidth > 478 && window.innerWidth < 578) {
-      this.co = 9
-    }
+    window.addEventListener("load", ()=>{
+      setTimeout(()=>{
+        this.spinner = false;
+      }, 100)
+    })
    }
-    title = 'app';
-    co = 9;
-
   ngOnInit(){
-    window.addEventListener('resize', ()=>{
-      if (window.innerWidth > 578) {
-        this.co = 4
-      }
-      if (window.innerWidth > 478 && window.innerWidth < 578) {
-        this.co = 2
-      }
+    window.addEventListener("load", ()=>{
+      setTimeout(()=>{
+        this.spinner = false;
+      }, 100)
     })
   }
 

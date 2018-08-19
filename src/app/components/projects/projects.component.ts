@@ -9,7 +9,7 @@ import { Title, Meta } from '@angular/platform-browser';
 export class ProjectsComponent implements OnInit {
 
   col:number = 3;
-  // row = '1:.5';
+  loding:boolean = true;
 
   projects = [
     {
@@ -29,8 +29,6 @@ export class ProjectsComponent implements OnInit {
   ngOnInit() {
     this._title.setTitle('Ahmed | Projects')
     this._meta.addTag({name:"description", content:'hello i am ahmed i am amean stake dev'})
-
-
     window.addEventListener('resize', ()=>{
    
       if (window.innerWidth >= 578) {
@@ -54,6 +52,13 @@ export class ProjectsComponent implements OnInit {
     } if(window.innerWidth < 578){
       this.col = 1
     }
+  }
+
+  imgLoding(){
+    setTimeout(()=>{
+      this.loding = false;
+
+    }, 100)
   }
 
 }
