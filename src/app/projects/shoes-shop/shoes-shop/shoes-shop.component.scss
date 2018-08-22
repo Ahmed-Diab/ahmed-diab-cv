@@ -1,0 +1,77 @@
+@import '../../../../assets/scss/color';
+@import '../../../../assets/scss/extend.scss';
+
+span{
+    @extend %overlay;
+
+}
+
+
+.overlayWindow{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: rgba($color_b, .5);
+    transform: translateY(-100%);
+    z-index: +99;
+
+    .fa{
+        transition: all ease .3s;
+        width: 40px;
+        height: 40px;
+        color: red;
+        opacity: .7;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        z-index: +100;
+        &:hover{
+            opacity: 1;
+        }
+    }
+
+    .overlay-chiled{
+        width: 80%;
+        padding: 20px 0;
+        margin: auto;
+        img{
+            width: 100%;
+        }
+
+    }
+
+}
+
+.enterOveraly{
+    overflow: auto;
+    animation: moveIn ease .5s forwards ;
+}
+@keyframes moveIn{
+    from{
+        transform: translateY(-100%)
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@media(max-width:578px){
+    .fa{
+        right: -10px;
+        top: -5px;
+    }
+    .overlay-chiled{
+
+        img{
+            width: 100%;
+            min-height: 300px;
+        }
+
+    }
+}
+

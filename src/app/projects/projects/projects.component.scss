@@ -1,0 +1,11 @@
+@import '../../../assets/scss/color.scss';
+@import '../../../assets/scss/extend.scss';
+
+mat-grid-tile{
+    // overflow: hidden;
+    a{
+        @extend %overlay;
+    }
+}
+
+

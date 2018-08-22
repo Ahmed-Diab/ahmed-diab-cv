@@ -1,0 +1,35 @@
+<h4>shoes shop images</h4>
+<mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let image of images">
+        <span >
+            <img src="/{{image.src}}" alt="{{image.alt}}" (load)='imgLoding()'>
+            <image-spinner *ngIf="loading"></image-spinner>
+            <div (click)='seeOverlay(image)' class="overlay" >
+                <h6>{{image.title}}</h6>
+            </div>
+            </span>
+    </mat-grid-tile>
+</mat-grid-list>
+<h4>shoes shop videos</h4>
+<mat-grid-list cols="2" rowHeight="1:.6"  [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let video of videos">
+            <span >
+                    <video width="100%"  controls played src="/{{video.src}}"  poster="/small-{{video.poster}}">
+                    </video>
+                    <div (click)='seeOverVid(video)' class="overlay">
+                        <h6  class="hu">hello</h6>
+                    </div>
+                    </span>
+
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="overlayWindow" #overlay>
+    <span class="fa fa-close fa-2x" (click)='hideOverlay()' ></span>
+    <div class="overlay-chiled">
+        <img src='' #overlayImage *ngIf="!vid"  alt="shoes shop" (load)='imgLoding2()'>
+        <video #overlayvideo *ngIf="!loading2 && vid" width="100%"  controls  src=""  poster="">
+        </video>
+        <image-spinner *ngIf="loading2"></image-spinner>
+    </div>
+</div>
