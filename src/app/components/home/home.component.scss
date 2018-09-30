@@ -1,11 +1,51 @@
+@import '../../../assets/scss/color';
 .home{
+    .image-containr{
+        width: 100%;
+        position: relative;
+        height: 150px;
+        padding-bottom: 45px;
+        padding-top: 45px;
+        img{
+            width: 170px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            border-radius: 4%;
+            left: 50%;
+            box-shadow: 0 0 20px 5px #804a4e;
+            transform: translateX(-50%) translateY(-50%);
+            -o-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+        }
+        @media (max-width:578px) {
+            img{
+                box-shadow: 0 0 5px 1px #804a4e;
 
+            }
+        }
+    }
     .titlecase{
         text-transform: capitalize;
     }
-    ul{
-        li{
-            line-height: 25px;
-        }
+    hr{
+        border-color: $color_a;
     }
+
+
+
 }
+/deep/ mat-grid-tile{
+        .mat-figure{
+            justify-content: start !important;
+            ul{
+                // padding: 0;
+                margin: 0;
+                li{
+                    line-height: 25px;
+                }
+            }
+        }
+}
+

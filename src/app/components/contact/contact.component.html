@@ -33,10 +33,14 @@
         </mat-form-field>
         <button mat-raised-button class="btn" type="submit">send</button>
       </form>
+      <div class="overlay" *ngIf="sendingMessage">
+        <h3>sending your meessage</h3>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile >
-        <div>
-          <p>ahmedeiddiab@gmil.com</p>
+        <div class="links">
+          <p>Email :ahmedeiddiab@gmil.com</p>
+          <p>Phone :011 445 656 55</p>
           <a href="https://www.facebook.com/ahmed.dibo.7140" target="_blank" mat-mini-fab class="mat-mini-fab">
             <i class="fa fa-facebook  fa-2x"></i>
           </a>
@@ -45,6 +49,9 @@
           </a>
           <a  href="https://www.linkedin.com/in/ahmed-diab-aa2473144/" target="_blank" mat-mini-fab class="mat-mini-fab" >
             <i class="fa  fa-linkedin fa-2x"></i>
+          </a>
+          <a  href="https://www.linkedin.com/in/ahmed-diab-aa2473144/" target="_blank" mat-mini-fab class="mat-mini-fab" >
+            <i class="fa  fa-github fa-2x"></i>
           </a>
         </div>
       </mat-grid-tile>

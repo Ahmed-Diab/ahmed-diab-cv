@@ -9,7 +9,7 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     ProjectsComponent,
   ],
-  imports: [
+  imports: [ 
     CommonModule,
     SharedModule,
     ProjectsRoutingModule,

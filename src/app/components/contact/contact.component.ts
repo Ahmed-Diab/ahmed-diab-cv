@@ -20,6 +20,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class ContactComponent implements OnInit {
   
 
+  sendingMessage:boolean = false;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -45,7 +46,7 @@ export class ContactComponent implements OnInit {
     
   ) { 
     window.addEventListener('resize', ()=>{
-      if (window.innerWidth <= 578) {
+      if (window.innerWidth <= 778) {
         this.col = 1;
       }else{
         this.col = 2;
@@ -55,8 +56,8 @@ export class ContactComponent implements OnInit {
   }
   ngOnInit() {
     this._title.setTitle('Ahmed | Contact')
-    this._meta.addTag({name:"description", content:'hello i am ahmed i am amean stake dev'})
-    if (window.innerWidth <= 578) {
+    this._meta.addTag({name:"description", content:'contact With MEAN Stack dev'})
+    if (window.innerWidth <= 778) {
       this.col = 1;
     }else{
       this.col = 2;
@@ -76,18 +77,24 @@ export class ContactComponent implements OnInit {
     }
     if (!this._validate.validateEmail(this.email)) {
       this._snackBar.open('plz enter valide email', 'Undo', {duration: 3000});
-
     }
     else{
+      this.sendingMessage = true;
       this._http.post('/message', message).subscribe((res:any)=>{
         if (res.success) {
+          this.sendingMessage = false
           this.email = '';
           this.name = undefined;
           this.message = undefined;
           this._snackBar.open(res.MSG, 'Undo', {duration: 3000})
         }else{
+          this.sendingMessage = false
           this._snackBar.open(res.errMSG, 'Undo', {duration: 3000});
         }
+      },
+      (err)=>{
+        this._snackBar.open(err.message, 'Undo', {duration: 5000});
+        this.sendingMessage = false;
       })
     }
   }

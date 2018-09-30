@@ -2,18 +2,22 @@
 <mat-drawer-container class="example-container" autosize>
     <app-spinner *ngIf="spinner"></app-spinner>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="side">
-        <a mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
-        <a mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
-        <a mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
+    <div class="side" *ngIf="!phoneSize">
+        <a  mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
+        <a  mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
+        <a  mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
     </div>
+    <div class="side" *ngIf="phoneSize">
+      <a (click)="drawer.toggle()" mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
+      <a (click)="drawer.toggle()" mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
+      <a (click)="drawer.toggle()" mat-button mat-raised-button [routerLink]="[ '/contact']" routerLinkActive="active">Contact</a>
+  </div>
   </mat-drawer>
   <div class="example-sidenav-content">
     <button type="button" mat-mini-fab class="mat-mini-fab" (click)="drawer.toggle()">
       <i class="fa fa-2x fa-home"></i>
     </button>
     <div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
-
         <router-outlet #myOutlet='outlet'></router-outlet>
     </div>
   </div>

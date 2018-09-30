@@ -10,8 +10,16 @@ import { routerTransition } from './module/animation';
 })
 export class AppComponent implements OnInit {
   showFiller = false;
-  spinner:boolean = true
+  spinner:boolean = true;
+  phoneSize:boolean = false;
   constructor() {
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth <= 578){
+        this.phoneSize = true;
+      }else{
+        this.phoneSize = false;
+      }
+    })
     window.addEventListener("load", ()=>{
       setTimeout(()=>{
         this.spinner = false;
@@ -19,6 +27,11 @@ export class AppComponent implements OnInit {
     })
    }
   ngOnInit(){
+    if(window.innerWidth <= 578){
+      this.phoneSize = true;
+    }else{
+      this.phoneSize = false;
+    }
     window.addEventListener("load", ()=>{
       setTimeout(()=>{
         this.spinner = false;
