@@ -18,8 +18,6 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  
-
   sendingMessage:boolean = false;
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -50,7 +48,6 @@ export class ContactComponent implements OnInit {
         this.col = 1;
       }else{
         this.col = 2;
-  
       }
     })
   }
