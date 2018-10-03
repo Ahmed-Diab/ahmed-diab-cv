@@ -1,4 +1,6 @@
-<h4>shoes shop images</h4>
+<h4>shoes shop</h4>
+<a target="_blank" href="https://github.com/Ahmed-Diab/shoes-shop">shoes shop on github </a>
+
 <mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
     <mat-grid-tile *ngFor="let image of images">
         <span >
@@ -9,20 +11,10 @@
             </div>
             </span>
     </mat-grid-tile>
-</mat-grid-list>
-<h4>shoes shop videos</h4>
-<mat-grid-list cols="2" rowHeight="1:.6"  [gutterSize]="'10px'">
-    <mat-grid-tile *ngFor="let video of videos">
-            <span >
-                    <video width="100%"  controls played src="/{{video.src}}"  poster="/small-{{video.poster}}">
-                    </video>
-                    <div (click)='seeOverVid(video)' class="overlay">
-                        <h6  class="hu">hello</h6>
-                    </div>
-                    </span>
 
-    </mat-grid-tile>
+
 </mat-grid-list>
+
 
 <div class="overlayWindow" #overlay>
     <span class="fa fa-close fa-2x" (click)='hideOverlay()' ></span>

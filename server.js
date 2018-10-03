@@ -9,7 +9,7 @@ const app = express();
 // // Connect To Database (OLD CODE)
 // 'mongodb://ahmed-diab:152010mohmed@ds125302.mlab.com:25302/message-ahmed' ||
 // "mongodb://localhost:27017/mean-stake"
-mongoose.connect('mongodb://localhost:27017/mean-stake', { useNewUrlParser: true });
+mongoose.connect('mongodb://ahmed-diab:152010mohmed@ds125302.mlab.com:25302/message-ahmed', { useNewUrlParser: true });
 // // On Connection
 mongoose.connection.on('connected', () => {
   console.log('Connected to Database ');
@@ -20,9 +20,7 @@ mongoose.connection.on('error', (err) => {
 });
 // const admin = require('./routes/admin');
 const message = require('./routes/message');
-
 // Set Static Folder
-app.use(express.static(path.join(__dirname, 'videos/')));
 app.use(express.static(path.join(__dirname, 'images/')));
 app.use(express.static(path.join(__dirname, 'dist/')));
 

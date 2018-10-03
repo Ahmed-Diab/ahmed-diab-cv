@@ -11,13 +11,26 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
   row = '1:1'
   loading: boolean = true;
   loading2: boolean = true;
-  vid: boolean = true;
   @ViewChild('overlayImage') overlayImage;
-  @ViewChild('overlayvideo') overlayvideo;
   @ViewChild('overlay') overlay;
   constructor(
     private _renderer2:Renderer2
-  ) { }
+  ) {
+    if (window.innerWidth >= 578) {
+      this.col = 2;
+      this.row = "1:.8"
+
+    }if (window.innerWidth >= 992) {
+      this.row = "1:.7"
+      this.col = 3
+    }if(window.innerWidth >= 1200){
+      this.row = "1:.8"
+      this.col = 4
+    } if(window.innerWidth < 578){
+      this.row = "1:.8"
+      this.col = 2
+    }
+   }
   
   images = [ 
     {
@@ -38,17 +51,13 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
     {
       src:'contact.png', alt:'contact page image for shoes shop', title:"contact page"
     }]
-
-
-    videos:Array<object> =[
-      {src:'shoes-shop.mp4', poster:'home.png'}
-    ]
     ngAfterViewInit(){
 
     }
   ngOnInit() {
     window.addEventListener('resize', ()=>{
-   
+      let over = document.querySelector('.overlayWindow');
+      this._renderer2.setStyle(over, 'height', window.innerHeight +'px')
       if (window.innerWidth >= 578) {
         this.col = 2;
         this.row = "1:.8"
@@ -61,13 +70,12 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
         this.col = 4
       } if(window.innerWidth < 578){
         this.row = "1:.8"
-        this.col = 1
+        this.col = 2
       }
     })
   }
   seeOverlay(i){
-    window.scrollTo(0,0)
-    this.vid = false;
+    window.scrollTo(0, 0);
     setTimeout(() => {
       let image = i.src
       let alt = i.alt
@@ -77,23 +85,6 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
     }, 300);
 
 
-  }
-  seeOverVid(v){
-    window.scrollTo(0,0)
-
-    this.loading2 = false;
-    this.vid = true;
-    setTimeout(()=>{
-      let src = v.src;
-      let poster = v.poster;
-      this._renderer2.setAttribute(this.overlayvideo.nativeElement, 'src', `/${src}`)
-      this._renderer2.setAttribute(this.overlayvideo.nativeElement, 'poster', `/${poster}`)
-
-      this._renderer2.addClass(this.overlay.nativeElement, 'enterOveraly')
-    }, 300)
-
-
- 
   }
   hideOverlay(){
     this._renderer2.removeClass(this.overlay.nativeElement, 'enterOveraly')
