@@ -30,7 +30,7 @@
         text-transform: capitalize;
     }
     hr{
-        border-color: $color_a;
+        border-color: $lightColor;
     }
 
 
@@ -44,6 +44,10 @@
                 margin: 0;
                 li{
                     line-height: 25px;
+                    min-height: 30px;                    svg{
+                        height: 30px;
+                        width:30px;
+                    }
                 }
             }
         }

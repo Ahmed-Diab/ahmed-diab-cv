@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
 
 const routes: Routes = [
-  {path:'', component:ProjectsComponent},
-  // {path:'shoes-shop', loadChildren:'./shoes-shop/shoes-shop.module#ShoesShopModule'}
+  {path: '', component: ProjectsComponent},
+  {path: 'shoes-shop', loadChildren: './shoes-shop/shoes-shop.module#ShoesShopModule'}
 ];
 
 @NgModule({

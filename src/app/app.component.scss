@@ -2,14 +2,14 @@
 
   .example-container {
     width: 100%;
-    background-color: $color_c;
+    background-color: $darkColor;
 
     .example-sidenav {
         padding: 50px;
         height: 100vh;
         width: 25%;
         position: fixed;
-        background-color: $color_b;
+        background-color: $midColor;
         .side{
             top: 50%;
             transform: translateY(-50%);
@@ -28,9 +28,9 @@
         width: 50px;
         z-index: +10000;
         height: 50px;
-        background-color: $color_a;
+        background-color: $lightColor;
             i{
-                color: $color_c;
+                color: $darkColor;
             }
         }
         @media (max-width:578px) {
@@ -45,6 +45,15 @@
             min-height: 100vh;
         
         }
+        button{
+            mat-icon{
+                color:$darkColor;
+                width: 40px;
+                height: 40px;
+                font-size: 35px;
+            }
+        }
+
 
         
         @media(max-width:578px){
@@ -75,6 +84,6 @@
 
 
 .active{
-    background-color: $color_c !important;
-    color: $color_a !important;
+    background-color: $darkColor !important;
+    color: $lightColor !important;
 }

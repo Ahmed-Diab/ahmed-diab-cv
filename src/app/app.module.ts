@@ -5,14 +5,16 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ValidateService } from './services/validate.service';
 import { SharedModule } from './shared/shared.module';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponants,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,12 +24,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
     FormsModule,
     MatGridListModule,
     HttpClientModule,
+    MatIconModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
   ],
   exports: [
+    MatIconModule,
+
   ],
 
-  providers: [ValidateService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

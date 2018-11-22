@@ -7,23 +7,24 @@ span{
 }
 a{
     text-decoration: none;
-    color: $color_a;
+    color: $lightColor;
     padding-top: 10px;
 }
 
 .overlayWindow{
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     width: 100%;
     left: 0;
     right: 0;
     overflow: hidden;
-    background-color: rgba($color_b, .5);
+    background-color: rgba($midColor, .5);
     transform: translateY(-100%);
     z-index: +99;
 
-    .fa{
+    mat-icon{
+        cursor: pointer;
         transition: all ease .3s;
         width: 40px;
         height: 40px;
@@ -38,11 +39,12 @@ a{
         }
     }
 
-    .overlay-chiled{
-        // width: 80%;
+    .overlay-child{
+        overflow: auto;
         padding: 20px 0;
          img{
-            width: 80%;
+            max-width: 80%;
+            max-height: 80%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -73,7 +75,6 @@ a{
         top: -5px;
     }
     .overlay-chiled{
-
         img{
             width: 100%;
             min-height: 300px;
