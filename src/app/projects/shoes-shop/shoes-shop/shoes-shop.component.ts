@@ -1,5 +1,6 @@
 import { Component, OnInit, Renderer2, AfterViewInit, Input, ViewChild } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import {animate, animateChild, group, query as q, sequence, state, style, transition, trigger} from '@angular/animations';
 
 @Component({
   selector: 'app-shoes-shop',
@@ -75,6 +76,11 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
     });
   }
   seeOverlay(i) {
+    const over = document.querySelector('.overlayWindow');
+    this._renderer2.setStyle(over, 'height', window.innerHeight + 'px');
+    this._renderer2.setStyle(over, 'top',  0 + 'px');
+    this._renderer2.setStyle(over, 'bottom', 0 + 'px');
+
     setTimeout(() => {
       const image = i.src;
       const alt = i.alt;
@@ -92,16 +98,17 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
   }
 
 
-  imgLoding() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 100);
+  imgLoad(event) {
+   this._renderer2.addClass(event.target.nextElementSibling, 'spinnerOut');
+  //  setTimeout(() => {
+  //   this._renderer2.setStyle(event.target.nextElementSibling, 'display', 'none');
+  //   // event.target.nextSibling.style.display = 'none';
+  //  }, 2000);
   }
 
   imgLoding2() {
     setTimeout(() => {
       this.loading2 = false;
-
     }, 100);
   }
 }

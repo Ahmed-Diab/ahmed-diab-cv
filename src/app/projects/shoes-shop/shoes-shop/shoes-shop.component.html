@@ -1,25 +1,25 @@
 <h4>shoes shop</h4>
-<!-- <a target="_blank" href="https://github.com/Ahmed-Diab/shoes-shop">shoes shop on github </a> -->
+<a target="_blank" href="https://github.com/Ahmed-Diab/shoes-shop">shoes shop on github </a>
 
 <mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
     <mat-grid-tile *ngFor="let image of images">
         <span >
-            <img src="{{image.src}}" alt="{{image.alt}}" (load)='imgLoding()'>
-            <app-image-spinner *ngIf="loading"></app-image-spinner>
+            <img src="{{image.src}}" alt="{{image.alt}}" (load)='imgLoad($event)'>
+            <app-image-spinner></app-image-spinner>
             <div (click)='seeOverlay(image)' class="overlay" >
                 <h6>{{image.title}}</h6>
             </div>
             </span>
     </mat-grid-tile>
 </mat-grid-list>
-
-
 <div class="overlayWindow" #overlay>
-        <mat-icon (click)='hideOverlay()' >close</mat-icon>
-    <div class="overlay-child">
-        <img src='' #overlayImage *ngIf="!vid"  alt="shoes shop" (load)='imgLoding2()'>
-        <video #overlayvideo *ngIf="!loading2 && vid" width="100%"  controls  src=""  poster="">
-        </video>
-        <app-image-spinner *ngIf="loading2"></app-image-spinner>
-    </div>
+    <mat-icon (click)='hideOverlay()' >close</mat-icon>
+<div class="overlay-child">
+    <img src='' #overlayImage *ngIf="!vid"  alt="shoes shop" (load)='imgLoding2()'>
+    <video #overlayvideo *ngIf="!loading2 && vid" width="100%"  controls  src=""  poster="">
+    </video>
+    <app-image-spinner *ngIf="loading2"></app-image-spinner>
 </div>
+</div>
+
+

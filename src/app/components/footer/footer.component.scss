@@ -2,6 +2,20 @@
 
 footer{
     mat-grid-list{
-        background-color: colo
+        background-color: $midColor;
+        
+        /deep/ .mat-figure{
+            justify-content: center !important;
+            a{
+                margin: 0 10px;
+                width: 40px;
+                height: 40px;
+                svg{
+                    width: 40px;
+                    height: 40px;
+                }
+
+            }
+        }
     }
 }
