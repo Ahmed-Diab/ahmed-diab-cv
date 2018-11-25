@@ -14,8 +14,8 @@ export class FooterComponent implements OnInit {
     sanitizer: DomSanitizer
   ) {
     iconRegistry.addSvgIcon(
-      'github',
-      sanitizer.bypassSecurityTrustResourceUrl('../../assets/svg/github.svg'));
+      'githubFooter',
+      sanitizer.bypassSecurityTrustResourceUrl('../../assets/svg/github_footer.svg'));
     iconRegistry.addSvgIcon(
       'twitter',
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/svg/twitter.svg'));

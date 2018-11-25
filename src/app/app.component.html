@@ -3,23 +3,22 @@
     <app-spinner *ngIf="spinner"></app-spinner>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <div class="side" *ngIf="!phoneSize">
-        <a  mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
-        <a  mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
+        <a (click)='tog()' mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
+        <a (click)='tog()' mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
     </div>
     <div class="side" *ngIf="phoneSize">
       <a (click)="drawer.toggle()" mat-button mat-raised-button [routerLink]="[ '/home']" routerLinkActive="active">Home</a> 
       <a (click)="drawer.toggle()" mat-button mat-raised-button [routerLink]="[ '/projects']" routerLinkActive="active">Projects</a>
   </div>
   </mat-drawer>
-  <div class="example-sidenav-content">
+  <div class="example-sidenav-content" >
     <button type="button" mat-mini-fab class="mat-mini-fab" (click)="drawer.toggle()">
       <mat-icon>home</mat-icon>
     </button>
-    <div class="router-outlet" [@routeAnimation]="getDepth(myOutlet)">
+    <div class="router-outlet"  [@routeAnimation]="getDepth(myOutlet)">
         <router-outlet #myOutlet='outlet'></router-outlet>
     </div>
     <app-footer></app-footer>
-
   </div>
 </mat-drawer-container>
 

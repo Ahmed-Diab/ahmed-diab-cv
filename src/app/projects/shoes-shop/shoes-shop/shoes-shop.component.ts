@@ -55,10 +55,7 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
 
     }
   ngOnInit() {
-    window.scrollTo(0, 0);
     window.addEventListener('resize', () => {
-      const over = document.querySelector('.overlayWindow');
-      this._renderer2.setStyle(over, 'height', window.innerHeight + 'px');
       if (window.innerWidth >= 578) {
         this.col = 2;
         this.row = '1:.8';
@@ -76,24 +73,26 @@ export class ShoesShopComponent implements OnInit, AfterViewInit {
     });
   }
   seeOverlay(i) {
+    window.scrollTo(0, 0);
+    document.body.style.overflow = 'hidden';
     const over = document.querySelector('.overlayWindow');
     this._renderer2.setStyle(over, 'height', window.innerHeight + 'px');
-    this._renderer2.setStyle(over, 'top',  0 + 'px');
-    this._renderer2.setStyle(over, 'bottom', 0 + 'px');
-
     setTimeout(() => {
       const image = i.src;
       const alt = i.alt;
       this._renderer2.setAttribute(this.overlayImage.nativeElement, 'src', `/${image}`);
       this._renderer2.setAttribute(this.overlayImage.nativeElement, 'alt', `${alt}`);
       this._renderer2.addClass(this.overlay.nativeElement, 'enterOveraly');
+      this._renderer2.setStyle(over, 'transform', 'translateY(0%)');
+
     }, 300);
-     document.body.style.overflow = 'hidden';
+
   }
   hideOverlay() {
     this._renderer2.removeClass(this.overlay.nativeElement, 'enterOveraly');
     this.loading2 = true;
     document.body.style.overflow = 'auto';
+    this._renderer2.setStyle(this.overlay.nativeElement, 'transform', 'translateY(-100%)');
 
   }
 

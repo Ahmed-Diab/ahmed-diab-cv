@@ -56,6 +56,9 @@ export class HomeComponent implements OnInit {
         iconRegistry.addSvgIcon(
           'github',
           sanitizer.bypassSecurityTrustResourceUrl('../../assets/svg/github.svg'));
+          iconRegistry.addSvgIcon(
+            'git',
+            sanitizer.bypassSecurityTrustResourceUrl('../../assets/svg/git.svg'));
       }
 
 

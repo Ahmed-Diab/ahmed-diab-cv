@@ -1,6 +1,4 @@
 <h4>shoes shop</h4>
-<a target="_blank" href="https://github.com/Ahmed-Diab/shoes-shop">shoes shop on github </a>
-
 <mat-grid-list cols="{{col}}" rowHeight="1:.5"  [gutterSize]="'10px'">
     <mat-grid-tile *ngFor="let image of images">
         <span >
@@ -12,6 +10,22 @@
             </span>
     </mat-grid-tile>
 </mat-grid-list>
+
+<div class="github-div">
+    <iframe
+        frameborder
+        allowfullscreen="allowfullscreen" 
+        class="iframe" 
+        mozallowfullscreen="mozallowfullscreen" 
+        msallowfullscreen="msallowfullscreen" 
+        oallowfullscreen="oallowfullscreen" 
+        src="https://www.youtube.com/embed/RIcyCrnW154?autoplay=0&amp;controls=5&amp;showinfo=1&amp;autohide=1" 
+        webkitallowfullscreen="webkitallowfullscreen"></iframe>
+    <br>
+    <br>
+    <a  target="_blank" href="https://github.com/Ahmed-Diab/shoes-shop">github rebo</a>
+</div>
+
 <div class="overlayWindow" #overlay>
     <mat-icon (click)='hideOverlay()' >close</mat-icon>
 <div class="overlay-child">
@@ -21,5 +35,4 @@
     <app-image-spinner *ngIf="loading2"></app-image-spinner>
 </div>
 </div>
-
 

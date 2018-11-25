@@ -1,45 +1,51 @@
-import { Component, OnInit,  } from '@angular/core';
+import { Component, OnInit, ViewChild,  } from '@angular/core';
 import { routerTransition } from './module/animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations:[routerTransition]
+  animations: [routerTransition]
 
 })
 export class AppComponent implements OnInit {
   showFiller = false;
-  spinner:boolean = true;
-  phoneSize:boolean = false;
+  spinner = true;
+  phoneSize = false;
+  @ViewChild('drawer') drawer;
   constructor() {
-    window.addEventListener('resize', ()=>{
-      if(window.innerWidth <= 578){
+    window.scrollTo(0, 0);
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 578) {
         this.phoneSize = true;
-      }else{
+      } else {
         this.phoneSize = false;
       }
-    })
-    window.addEventListener("load", ()=>{
-      setTimeout(()=>{
+    });
+    window.addEventListener('load', () => {
+      setTimeout(() => {
         this.spinner = false;
-      }, 100)
-    })
+      }, 100);
+    });
    }
-  ngOnInit(){
-    if(window.innerWidth <= 578){
+  ngOnInit() {
+    if (window.innerWidth <= 578) {
       this.phoneSize = true;
-    }else{
+    } else {
       this.phoneSize = false;
     }
-    window.addEventListener("load", ()=>{
-      setTimeout(()=>{
+    window.addEventListener('load', () => {
+      setTimeout(() => {
         this.spinner = false;
-      }, 100)
-    })
+      }, 100);
+    });
   }
 
-  getDepth(outlet){
+  getDepth(outlet) {
     return  outlet.activatedRouteData.depth || null;
+  }
+  tog() {
+    document.body.style.overflow = 'auto';
   }
 }

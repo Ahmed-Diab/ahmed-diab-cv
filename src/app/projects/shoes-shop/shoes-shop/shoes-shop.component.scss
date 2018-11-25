@@ -1,5 +1,12 @@
 @import '../../../../assets/scss/color';
 @import '../../../../assets/scss/extend.scss';
+mat-grid-list {
+    mat-grid-tile{
+        img{
+            min-height: 160px;;
+        }
+    }
+}
 
 span{
     @extend %overlay;
@@ -10,49 +17,55 @@ a{
     color: $lightColor;
     padding-top: 10px;
 }
-
-.overlayWindow{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-    background-color: rgba($midColor, .5);
-    transform: translateY(-100%);
-    z-index: +99;
-    mat-icon{
-        cursor: pointer;
-        transition: all ease .3s;
-        width: 40px;
-        height: 40px;
-        color: $lightColor;
-        opacity: .7;
+    .overlayWindow{
         position: absolute;
-        right: 10px;
-        top: 20px;
-        z-index: +100;
-        &:hover{
-            opacity: 1;
-        }
-    }
-
-    .overlay-child{
-        overflow: auto;
-        padding: 20px 0;
-         img{
-            max-width: 80%;
-            max-height: 80%;
+        z-index: +99;
+        top: 0;
+        width: 100%;
+        left: 0;
+        right: 0 !important;
+        background-color: rgba($midColor, .5);
+        transform: translateY(-100%);
+        mat-icon{
+            cursor: pointer;
+            transition: all ease .3s;
+            width: 40px;
+            height: 40px;
+            color: $lightColor;
+            opacity: .7;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
+            right: 10px;
+            top: 20px;
+            z-index: +100;
+            &:hover{
+                opacity: 1;
+            }
         }
-
-
+    
+        .overlay-child{
+            overflow: auto;
+            padding: 20px 0;
+             img{
+                max-width: 80%;
+                max-height: 80%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+    
+    
+        }
+    
     }
 
+.github-div{
+    margin: 10px 0;
+    iframe{
+        width: 350px;
+        height: 200px;
+    }
 }
-
 .enterOveraly{
     overflow: auto;
     animation: moveIn ease .5s forwards ;
@@ -81,7 +94,7 @@ a{
 }
 
 .spinnerOut{
-    transition: all ease 5s;
+    transition: all ease 1s;
     opacity: 0;
 }
 

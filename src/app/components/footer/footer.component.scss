@@ -3,19 +3,30 @@
 footer{
     mat-grid-list{
         background-color: $midColor;
-        
-        /deep/ .mat-figure{
-            justify-content: center !important;
-            a{
-                margin: 0 10px;
-                width: 40px;
-                height: 40px;
-                svg{
-                    width: 40px;
-                    height: 40px;
+        height:85px !important;
+        /deep/ mat-grid-tile{
+            height: 85px !important;
+            /deep/ .mat-figure{
+                justify-content: center !important;
+                .links{
+                    p{
+                        font-size: 14px;
+                        text-align: center;
+
+                        // justify-content: center !important;
+                        margin: 0;
+                        a{
+                            margin: 0 10px;
+                            mat-icon{
+                                width: 20px;
+                                height: 20px;;
+                            }
+                        }
+                    }
                 }
 
             }
         }
+
     }
 }
